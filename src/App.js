@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
 import './App.css';
+import { CarShow } from './components/CarShow';
+import { Text } from '@react-three/drei'; 
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <Suspense fallback={null}>
+    <Canvas shadows style={{height:'100vh'}}>
+      <Text position={[6,2,2]} rotation={[0,0,0]} scale={0.5} color={0xfff000} anchorX='left'>
+        this is me {'\n'} do you know
+      </Text>
+      <CarShow  />
+    </Canvas>
+   </Suspense>
     </div>
   );
 }
