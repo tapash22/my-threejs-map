@@ -3,23 +3,26 @@ import {
   PerspectiveCamera,
   CubeCamera,
   Environment,
+  ScrollControls,
 } from "@react-three/drei";
 import { Ground } from "./Ground";
-import { Car } from "../Car";
-import { Rings } from "../Rings";
-import { Boxes } from "../Boxes";
+import { Car } from "./Car";
+import { Rings } from "./Rings";
+import { Boxes } from "./Boxes";
 import {
   EffectComposer,
   Bloom,
   ChromaticAberration,
 } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
-import { FloatingGrid } from "../FloatingGrid";
+import { FloatingGrid } from "./FloatingGrid";
+import { Scroll } from "@react-three/drei";
 
 export function CarShow() {
   return (
     <>
-      <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
+
+      <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} enableZoom={false} />
 
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
 
@@ -73,6 +76,16 @@ export function CarShow() {
           offset={[0.0005, 0.0012]} 
         />
       </EffectComposer>
+
+      {/* <ScrollControls pages={1} damping={0.25}>
+      <Scroll html>
+<div className="flex justify-center bg-yellow-500 w-screen">
+<h1 className="text-red-500 font-bold text-xl text-center">
+  this is me
+</h1>
+</div>
+    </Scroll>
+      </ScrollControls> */}
     </>
   );
 }
