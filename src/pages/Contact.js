@@ -1,10 +1,51 @@
 import { useState } from "react";
+import image from '../assets/logo192.png';
+import EmpCard from "../components/card/EmpCard";
 
 const Contact = () => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [details, setDetails] = useState('');
+    const empProfile =[
+        {
+            id:1,
+            name:'Jon Roy',
+            position:'...',
+            email:'me@gmail.com',
+            experience:'7 year Experience',
+            image: image,
+
+        },
+        {
+            id:2,
+            name:'Jon David Roy',
+            position:'...',
+            email:'info@gmail.com',
+            experience:'5 year Experience',
+            image: image,
+
+        },
+        {
+            id:3,
+            name:'Roy Stifen',
+            position:'...',
+            email:'hot@gmail.com',
+            experience:'6 year Experience',
+            image: image,
+
+        },
+        {
+            id:1,
+            name:'Tapash Paul',
+            position:'...',
+            email:'tapasp263@gmail.com',
+            experience:'3 year experience',
+            image: image,
+
+        },
+        
+    ];
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -12,46 +53,49 @@ const Contact = () => {
     };
 
     return (
-        <div className="flex justify-between bg-white px-5 py-3">
+        <div className="flex justify-between bg-white px-5 py-3 h-auto">
             <div className="block px-5 py-2 w-2/3 ">
                 <span className="flex justify-center py-2 text-2xl font-bold text-center tracking-wide underline underline-offset-8 decoration-blue-800">
                     Introduce Our Experts
                 </span>
-                <div className="grid grid-cols-2 gap-4 px-3">
-                    <div className="h-40 w-full px-2 py-2 bg-red-800">
-                        this is vue
-                    </div>
-                    <div className="h-40 w-full px-2 py-2 bg-red-800">
-                        this is react
-                    </div>
-                    <div className="h-40 w-full px-2 py-2 bg-red-800">
-                        this is vue
-                    </div>
-                    <div className="h-40 w-full px-2 py-2 bg-red-800">
-                        this is react
-                    </div>
+                <div className="grid grid-cols-2 gap-8 px-3 py-3">
+                    {
+                        empProfile.map((emp) => {
+                            return (
+                                <EmpCard key={emp.id} emp={emp} />
+                            )
+                        })
+                    }
+                   
+                    
                 </div>
             </div>
-            <div className="px-5 py-1 w-1/3 fixed right-5 bg-red-500">
-                <div className="py-5 px-3 flex justify-center items-center w-full">
+            {/* form view */}
+            <div className="px-5 py-1 w-1/3 right-5 relative h-screen ">
+                <div className="py-5 px-5 block w-full bg-indigo-950 rounded-xl">
                     <form onSubmit={handleSubmit} className="block w-full">
+                        <div className="flex justify-center">
+                        <span className="text-2xl font-medium text-white py-2 text-center">
+                            Contact with us
+                        </span>
+                        </div>
                         <div className="w-full py-1">
-                            <label className="text-sm font-bold w-full tracking-wide my-2 ">
+                            <label className="text-sm font-bold w-full tracking-wide text-gray-200 ">
                                 Name
                             </label>
-                            <input type="text" name="name" value={name} onChange={(e) => setName(e.target.vallue)} autoComplete="off" placeholder="Enter Your Name" className="h-8 w-full py-2 px-2 text-sm font-medium tracking-wide ring-1 ring-indigo-900" />
+                            <input type="text" name="name" value={name} onChange={(e) => setName(e.target.vallue)} autoComplete="off" placeholder="Enter Your Name" className="h-8 w-full py-2 px-2 text-sm font-medium tracking-wide ring-1 ring-indigo-900 my-1 rounded-lg bg-transparent" />
                         </div>
                         <div className="w-full py-1">
-                            <label className="text-sm font-bold w-full py-2 tracking-wide ">
+                            <label className="text-sm font-bold w-full py-2 tracking-wide text-gray-200 ">
                                 Email
                             </label>
-                            <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.vallue)} autoComplete="off" placeholder="Enter Your Name" className="h-8 w-full py-2 px-2 text-sm font-medium tracking-wide ring-1 ring-indigo-900" />
+                            <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.vallue)} autoComplete="off" placeholder="Enter Your Name" className="h-8 w-full py-2 px-2 text-sm font-medium tracking-wide ring-1 ring-indigo-900 my-1 rounded-lg bg-transparent" />
                         </div>
                         <div className="w-full py-1">
-                            <label className="text-sm font-bold w-full py-2 tracking-wide ">
+                            <label className="text-sm font-bold w-full py-2 tracking-wide text-gray-200 ">
                                 Description
                             </label>
-                            <textarea name="details" value={details} onChange={(e) => setDetails(e.target.vallue)} placeholder="Enter Your Details" className="w-full h-auto px-2 py-2"></textarea>
+                            <textarea name="details" value={details} onChange={(e) => setDetails(e.target.vallue)} placeholder="Enter Your Details" className="w-full h-auto px-2 py-2 ring-1 ring-indigo-900 my-1 rounded-lg bg-transparent "></textarea>
                         </div>
                         <div className="py-2 flex justify-start ">
                             <button className="bg-indigo-800 rounded-lg text-sm font-bold tracking-wide text-white py-2 px-3 shadow-lg shadow-gray-800" type="submit">Submit</button>

@@ -12,7 +12,7 @@ const CardList = ({carI}) =>{
             </div>
         </div>
 
-        <div className="absolute inset-0 bg-gray-950 from-transparent  opacity-0 group-hover:opacity-70 transform scale-x-0 group-hover:scale-x-100  transition-all origin-left duration-300 rounded-lg">
+        <div className="absolute inset-0 bg-indigo-950 from-transparent  opacity-50 group-hover:opacity-0 transform scale-x-100 group-hover:scale-x-0  transition-all origin-left duration-500 rounded-lg">
 
         </div>
     </div>

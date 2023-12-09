@@ -9,10 +9,11 @@ textarea:focus{
   outline: none;
 }
 
-input::placeholder{
+input::placeholder,
+textarea::placeholder{
   font-size: 12px;
   font-weight: 500;
-  color: gray;
+  color: rgb(98, 91, 91);
   letter-spacing: 1px;
 }
 .leaflet-container {
