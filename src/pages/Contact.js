@@ -10,6 +10,8 @@ import man4 from "../assets/man/4.png";
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [phone, setPhone] = useState("");
   const [details, setDetails] = useState("");
   const empProfile = [
     {
@@ -48,7 +50,15 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name + " " + email + "" + details);
+    const formData = {
+        name:name,
+        email:email,
+        phone:phone,
+        subject:subject,
+        details:details
+        
+    }
+    console.log(formData);
   };
 
   return (
@@ -66,7 +76,7 @@ const Contact = () => {
         </div>
         {/* form view */}
         <div className="px-2 py-1 w-1/3 flex justify-center items-center ">
-          <div className="py-5 px-5 block h-1/2 bg-indigo-950 rounded-xl">
+          <div className="py-5 px-5 block w-full h-auto bg-indigo-950 rounded-xl">
             <form onSubmit={handleSubmit} className="block w-full h-full">
               <div className="flex justify-center">
                 <span className="text-2xl font-medium text-white py-2 text-center">
@@ -81,10 +91,10 @@ const Contact = () => {
                   type="text"
                   name="name"
                   value={name}
-                  onChange={(e) => setName(e.target.vallue)}
+                  onChange={(e) => setName(e.target.value)}
                   autoComplete="off"
                   placeholder="Enter Your Name"
-                  className="h-8 w-full py-2 px-2 text-sm font-medium tracking-wide ring-1 ring-indigo-900 my-1 rounded-lg bg-transparent"
+                  className="h-8 w-full py-2 px-2 text-sm text-gray-300 font-medium tracking-wide ring-1 ring-indigo-900 my-1 rounded-lg bg-transparent"
                 />
               </div>
               <div className="w-full py-1">
@@ -95,10 +105,38 @@ const Contact = () => {
                   type="text"
                   name="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.vallue)}
+                  onChange={(e) => setEmail(e.target.value)}
                   autoComplete="off"
                   placeholder="Enter Your Name"
-                  className="h-8 w-full py-2 px-2 text-sm font-medium tracking-wide ring-1 ring-indigo-900 my-1 rounded-lg bg-transparent"
+                  className="h-8 w-full py-2 px-2 text-sm text-gray-300 font-medium tracking-wide ring-1 ring-indigo-900 my-1 rounded-lg bg-transparent"
+                />
+              </div>
+              <div className="w-full py-1">
+                <label className="text-sm font-bold w-full py-2 tracking-wide text-gray-200 ">
+                  Phone
+                </label>
+                <input
+                  type="text"
+                  name="phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  autoComplete="off"
+                  placeholder="Enter Your Name"
+                  className="h-8 w-full py-2 px-2 text-sm text-gray-300 font-medium tracking-wide ring-1 ring-indigo-900 my-1 rounded-lg bg-transparent"
+                />
+              </div>
+              <div className="w-full py-1">
+                <label className="text-sm font-bold w-full py-2 tracking-wide text-gray-200 ">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                  autoComplete="off"
+                  placeholder="Enter Your Name"
+                  className="h-8 w-full py-2 px-2 text-sm text-gray-300 font-medium tracking-wide ring-1 ring-indigo-900 my-1 rounded-lg bg-transparent"
                 />
               </div>
               <div className="w-full py-1">
@@ -108,9 +146,9 @@ const Contact = () => {
                 <textarea
                   name="details"
                   value={details}
-                  onChange={(e) => setDetails(e.target.vallue)}
+                  onChange={(e) => setDetails(e.target.value)}
                   placeholder="Enter Your Details"
-                  className="w-full h-auto px-2 py-2 ring-1 ring-indigo-900 my-1 rounded-lg bg-transparent "
+                  className="w-full h-auto px-2 py-2 text-gray-300 ring-1 ring-indigo-900 my-1 rounded-lg bg-transparent "
                 ></textarea>
               </div>
               <div className="py-2 flex justify-start ">

@@ -115,7 +115,7 @@ const About = () => {
             {/* part two */}
             <div className="block px-5 py-2">
                 <span className="flex justify-center py-2 text-2xl font-bold text-center tracking-wide underline underline-offset-8 decoration-blue-800">
-                    Car view
+                    Our Brands
                 </span>
                 <div className='grid grid-cols-4  px-8 py-2 items-center gap-4'>
                     {
