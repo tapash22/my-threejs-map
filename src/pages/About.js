@@ -1,53 +1,11 @@
-import car from '../assets/car.png';
 import CarView from '../components/card/CarView';
 import CardList from '../components/card/CardList';
 
 import { MdCarRental } from "react-icons/md";
+import BrandList from '../storage/BrandList';
+import CarInfo from '../storage/CarInfo';
 
 const About = () => {
-
-    const carList = [
-        {
-            id: 1,
-            name: 'BMW',
-            image: car,
-            joining: '12-12-23'
-        },
-        {
-            id: 2,
-            name: 'Range Rover',
-            image: car,
-            joining: '12-12-23'
-        },
-        {
-            id: 3,
-            name: 'Honda',
-            image: car,
-            joining: '12-12-23'
-        },
-
-
-    ]
-
-    const carInfo = [
-        {
-            id:1,
-            image:car,
-        },
-        {
-            id:2,
-            image:car,
-        },
-        {
-            id:3,
-            image:car,
-        },
-        {
-            id:4,
-            image:car,
-        },
-    ]
-
     return (
         <div className="block bg-white px-5 py-3">
             {/* part one */}
@@ -68,7 +26,7 @@ const About = () => {
                 </span>
                 <div className='flex justify-center px-8 py-2 items-center gap-8'>
                     {
-                        carList.map((car) => {
+                        BrandList.map((car) => {
                             return (
                                 <CarView key={car.id} car={car} />
                             )
@@ -84,7 +42,7 @@ const About = () => {
                 </span>
                 <div className='block px-8 py-2'>
                    {
-                    carInfo.map((carI) => {
+                    CarInfo.map((carI) => {
                         return (
                             <CardList key={carI.id} carI={carI} />
                         )

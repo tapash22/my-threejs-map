@@ -30,3 +30,19 @@ textarea::placeholder{
   height: 100%;
 }
 
+.rotate-text{
+  display: flex;
+  animation: rotate360 10s linear;
+}
+
+@keyframes rotate360 {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+
