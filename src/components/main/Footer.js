@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import car from "../../assets/car.png";
+import logo from "../../assets/logo/logo.png";
 import { FaFacebook, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaLocationDot, FaPhoneVolume } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -51,10 +51,10 @@ const Footer = () => {
     const textDetails2 = " loremIpsum dolor ea dolor fugiat qui. Id nulla consectetur aliquip elit id veniam consequat et. Et consequat adipisicing aute incididunt ullamco amet eiusmod amet culpa amet. Anim esse labore proident exercitation nisi consequat ipsum do deserunt.loremIpsum dolor ea dolor fugiat qui. Id nulla consectetur aliquip elit id veniam consequat et. Et consequat adipisicing aute incididunt ullamco amet eiusmod amet culpa amet. Anim esse labore proident exercitation nisi consequat ipsum do deserunt."
     return (
         <div>
-            <div className="bg-gray-800 px-5 py-2 flex ring-1 ring-gray-200 w-full h-auto">
+            <div className="bg-indigo-950 px-5 py-2 flex ring-1 ring-gray-200 w-full h-auto">
 
                 <div className="w-1/4 h-auto flex justify-center items-center">
-                    <img src={car} alt="" className="h-32 w-32" />
+                    <img src={logo} alt="" />
                 </div>
 
                 <div className="flex justify-center w-3/4 ">

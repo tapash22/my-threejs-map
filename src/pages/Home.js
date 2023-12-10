@@ -1,12 +1,41 @@
-import { CarShow } from '../components/animation/CarShow';
-// import { Text } from '@react-three/drei'; 
-import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import CarList from '../storage/CarList';
+import { CarShow } from "../components/animation/CarShow";
+// import { Text } from '@react-three/drei';
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import man1 from '../assets/customer/1.jpg';
+import man2 from '../assets/customer/2.jpg';
+import man3 from '../assets/customer/3.jpg'
 
 const Home = () => {
+
+  const customers = [
+    {
+      id:1,
+      name:'customer name',
+      message:'Proident adipisicing incididunt in laboris anim deserunt tempor nulla incididunt pariatur culpa pariatur aute.',
+      image:man1,
+      info:'customer',
+      tag:'Best Car'
+    },
+    {
+      id:2,
+      name:'customer name',
+      message:'Proident adipisicing incididunt in laboris anim deserunt tempor nulla incididunt pariatur culpa pariatur aute.',
+      image:man2,
+      info:'customer',
+      tag:'Best Car'
+    },
+    {
+      id:3,
+      name:'customer name',
+      message:'Proident adipisicing incididunt in laboris anim deserunt tempor nulla incididunt pariatur culpa pariatur aute.',
+      image:man3,
+      info:'customer',
+      tag:'Best Car'
+    },
+  ]
   return (
-    <div>
+    <div className="h-full">
       {/* header */}
       <div style={{ height: '550px' }}>
         <Suspense fallback={null}>
