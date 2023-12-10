@@ -1,6 +1,6 @@
 const CarView = ({car}) => {
     return (
-        <div className="relative block w-1/3 h-auto ring-1 ring-indigo-600 rounded-lg py-2 group">
+        <div className="relative block w-full h-auto ring-1 ring-indigo-600 rounded-lg py-2 group">
             <div className="block w-full h-auto">
                 <div className="w-auto h-auto flex justify-center py-2 ">
                     <img src={car.image} alt="" className="h-32 w-32 rounded-full ring-2 ring-indigo-700 p-1" />

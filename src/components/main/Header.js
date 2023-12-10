@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import car from "../../assets/car.png";
+import { NavLink, Link } from "react-router-dom";
+import logo from "../../assets/logo/logo_sm.png";
 
 const Header = () => {
 
@@ -22,9 +22,11 @@ const Header = () => {
     ];
 
   return (
-    <div className="bg-gray-800 px-10 py-2 flex ring-1 ring-gray-200 w-full h-auto shadow-lg shadow-indigo-500">
+    <div className="bg-indigo-950 px-16 py-2 flex ring-1 ring-gray-200 w-full h-auto shadow-lg shadow-indigo-500">
         <div className="w-1/4 flex justify-start items-center">
-        <img src={car} alt="" className="h-12 w-12" />
+        <Link to="/">
+        <img src={logo} alt="" className="py-2 scale-125"  />
+        </Link>
         </div>
         <div className="flex justify-end items-center w-3/4">
             <ul className="list-none flex bg-transparent gap-5">

@@ -1,6 +1,15 @@
-import car from '../assets/car.png';
+
 import CarView from '../components/card/CarView';
 import CardList from '../components/card/CardList';
+
+// car image
+import honda from '../assets/brand/honda-logo.png';
+import bmw from '../assets/brand/bmw-logo.png';
+import mitsubishi from '../assets/brand/mitsubishi-logo.png';
+import nissan from '../assets/brand/nissan-logo.png';
+import tata from '../assets/brand/tata-logo.png';
+import tesla from '../assets/brand/tesla-logo.png';
+import toyota from '../assets/brand/toyota-logo.png'
 
 import { MdCarRental } from "react-icons/md";
 
@@ -9,42 +18,84 @@ const About = () => {
     const carList = [
         {
             id: 1,
-            name: 'BMW',
-            image: car,
+            name: 'Honda',
+            image: honda,
             joining: '12-12-23'
         },
         {
             id: 2,
-            name: 'Range Rover',
-            image: car,
+            name: 'BMW',
+            image: bmw,
             joining: '12-12-23'
         },
         {
             id: 3,
-            name: 'Honda',
-            image: car,
+            name: 'Mitsubishi',
+            image: mitsubishi,
             joining: '12-12-23'
         },
-
+        {
+            id: 4,
+            name: 'Nissan',
+            image: nissan,
+            joining: '12-12-23'
+        },
+        {
+            id: 5,
+            name: 'Tata',
+            image: tata,
+            joining: '12-12-23'
+        },
+        {
+            id: 6,
+            name: 'Tesla',
+            image: tesla,
+            joining: '12-12-23'
+        },
+        {
+            id: 7,
+            name: 'Toyota',
+            image: toyota,
+            joining: '12-12-23'
+        },
 
     ]
 
     const carInfo = [
         {
             id:1,
-            image:car,
+            image:honda,
+            details:"Mollit ut incididunt ipsum sint. Officia do enim ut aute dolor fugiat pariatur est. Eiusmod magna sunt nisi enim exercitation voluptate esse velit tempor nostrud magna laborum. Incididunt laboris pariatur reprehenderit minim dolore. Aliquip magna laborum ut Lorem nulla nulla nostrud elit deserunt non laborum. Commodo pariatur irure id aute irure velit amet ullamco voluptate tempor adipisicing sunt. Laborum veniam elit veniam non voluptate veniam do consequat sit eu incididunt aliqua."
         },
         {
             id:2,
-            image:car,
+            image:bmw,
+            details:"Mollit ut incididunt ipsum sint. Officia do enim ut aute dolor fugiat pariatur est. Eiusmod magna sunt nisi enim exercitation voluptate esse velit tempor nostrud magna laborum. Incididunt laboris pariatur reprehenderit minim dolore. Aliquip magna laborum ut Lorem nulla nulla nostrud elit deserunt non laborum. Commodo pariatur irure id aute irure velit amet ullamco voluptate tempor adipisicing sunt. Laborum veniam elit veniam non voluptate veniam do consequat sit eu incididunt aliqua."
         },
         {
             id:3,
-            image:car,
+            image:mitsubishi,
+            details:"Mollit ut incididunt ipsum sint. Officia do enim ut aute dolor fugiat pariatur est. Eiusmod magna sunt nisi enim exercitation voluptate esse velit tempor nostrud magna laborum. Incididunt laboris pariatur reprehenderit minim dolore. Aliquip magna laborum ut Lorem nulla nulla nostrud elit deserunt non laborum. Commodo pariatur irure id aute irure velit amet ullamco voluptate tempor adipisicing sunt. Laborum veniam elit veniam non voluptate veniam do consequat sit eu incididunt aliqua."
         },
         {
             id:4,
-            image:car,
+            image:nissan,
+            details:"Mollit ut incididunt ipsum sint. Officia do enim ut aute dolor fugiat pariatur est. Eiusmod magna sunt nisi enim exercitation voluptate esse velit tempor nostrud magna laborum. Incididunt laboris pariatur reprehenderit minim dolore. Aliquip magna laborum ut Lorem nulla nulla nostrud elit deserunt non laborum. Commodo pariatur irure id aute irure velit amet ullamco voluptate tempor adipisicing sunt. Laborum veniam elit veniam non voluptate veniam do consequat sit eu incididunt aliqua."
+        },
+        {
+            id:5,
+            image:tata,
+            details:"Mollit ut incididunt ipsum sint. Officia do enim ut aute dolor fugiat pariatur est. Eiusmod magna sunt nisi enim exercitation voluptate esse velit tempor nostrud magna laborum. Incididunt laboris pariatur reprehenderit minim dolore. Aliquip magna laborum ut Lorem nulla nulla nostrud elit deserunt non laborum. Commodo pariatur irure id aute irure velit amet ullamco voluptate tempor adipisicing sunt. Laborum veniam elit veniam non voluptate veniam do consequat sit eu incididunt aliqua."
+        },
+        {
+            id:6,
+            image:tesla,
+            details:"Mollit ut incididunt ipsum sint. Officia do enim ut aute dolor fugiat pariatur est. Eiusmod magna sunt nisi enim exercitation voluptate esse velit tempor nostrud magna laborum. Incididunt laboris pariatur reprehenderit minim dolore. Aliquip magna laborum ut Lorem nulla nulla nostrud elit deserunt non laborum. Commodo pariatur irure id aute irure velit amet ullamco voluptate tempor adipisicing sunt. Laborum veniam elit veniam non voluptate veniam do consequat sit eu incididunt aliqua."
+        },
+        {
+            id:7,
+            image:toyota,
+            details:"Mollit ut incididunt ipsum sint. Officia do enim ut aute dolor fugiat pariatur est. Eiusmod magna sunt nisi enim exercitation voluptate esse velit tempor nostrud magna laborum. Incididunt laboris pariatur reprehenderit minim dolore. Aliquip magna laborum ut Lorem nulla nulla nostrud elit deserunt non laborum. Commodo pariatur irure id aute irure velit amet ullamco voluptate tempor adipisicing sunt. Laborum veniam elit veniam non voluptate veniam do consequat sit eu incididunt aliqua."
         },
     ]
 
@@ -66,7 +117,7 @@ const About = () => {
                 <span className="flex justify-center py-2 text-2xl font-bold text-center tracking-wide underline underline-offset-8 decoration-blue-800">
                     Car view
                 </span>
-                <div className='flex justify-center px-8 py-2 items-center gap-8'>
+                <div className='grid grid-cols-4  px-8 py-2 items-center gap-4'>
                     {
                         carList.map((car) => {
                             return (

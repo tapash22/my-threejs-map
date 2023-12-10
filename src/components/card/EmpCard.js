@@ -1,10 +1,10 @@
 const EmpCard = ({emp}) =>{
     return (
-        <div className="h-auto w-full px-2 py-2 ">
-                        <div className="w-full h-auto py-2 px-2 flex justify-center">
-                            <img src={emp.image} alt="" className="w-32 h-32 ring-2 ring-indigo-950 shadow-xl shadow-indigo-950 rounded-full" />
+        <div className="h-auto w-full rounded-tl-full shadow-xl shadow-indigo-900 ">
+                        <div className="w-full h-auto px-2 flex justify-start overflow-hidden">
+                            <img src={emp.image} alt="" className="object-cover bg-center rounded-full scale-100 hover:scale-110 z-10 hover:z-50 transition-all duration-300" />
                         </div>
-                        <div className="w-full h-auto py-3 bg-indigo-950 opacity-90 rounded-tl-xl rounded-tr-xl ">
+                        <div className="w-full h-auto py-3 bg-indigo-950 opacity-90 rounded-tl-full -z-0">
                             <span className="text-xl font-bold py-1 flex justify-center text-gray-300 ">
                                 {emp.name}
                             </span>
