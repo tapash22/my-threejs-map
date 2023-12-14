@@ -97,7 +97,7 @@ const Footer = () => {
                                 {
                                     medias.map((media) => {
                                         return (
-                                            <li className="px-2 ">
+                                            <li className="px-2 " key={media.id} >
                                                 <Link to={media.link} className="text-indigo-500 font-normal text-xl"> {media.icon}</Link>
 
                                             </li>

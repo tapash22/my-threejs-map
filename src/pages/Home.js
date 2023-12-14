@@ -1,6 +1,6 @@
 import { CarShow } from "../components/animation/CarShow";
 // import { Text } from '@react-three/drei';
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import CarList from "../storage/CarList";
 import Customers from "../storage/Customers";
@@ -9,10 +9,74 @@ import SingleCar from "../components/card/SingleCar";
 import EmpProfile from "../storage/EmpProfile";
 import OurServices from "../components/swiper/OurServices";
 import CarServices from "../storage/CarServices";
+import CarType from '../storage/CarType';
+import CarCategory from "../components/card/CarCategory";
+
 
 const Home = () => {
+
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [customers,setCustomers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      
+      try {
+        const url = process.env.REACT_APP_API_URL;
+        const response = await fetch(url);
+        console.log(response);
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const result = await response.json();
+        setUsers(result);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      
+      try {
+        const url ='http://localhost:8000/api/customers';
+        const response = await fetch(url);
+        console.log(response);
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const result = await response.json();
+        setCustomers(result);
+        console.log(customers);
+      } catch (error) {
+        console.log(error);
+      } 
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
   return (
-    <div className="h-full">
+    <div className="block bg-white py-3">
       {/* header */}
       <div style={{ height: "550px" }}>
         <Suspense fallback={null}>
@@ -27,7 +91,64 @@ const Home = () => {
 
       <div className="bg-white px-5 py-3 h-auto block ">
         <span className="flex justify-center py-2 text-2xl font-bold text-center tracking-wide underline underline-offset-8 decoration-blue-800">
-          CAR CATEGORY
+         USERS DATA
+        </span>
+        <div className="grid grid-cols-4 gap-7 px-5 py-4">
+          {
+            users.map((user) => {
+              return (
+                <div className="block rounded-lg ring-1 ring-red-500 px-2 py-3" key={user.id}>
+                  <span className="text-xl font-bold py-2 ">
+                    {
+                      user.name
+                    }
+                  </span>
+                  <span className="text-lg font-medium
+                   py-2 ">
+                    {
+                      user.name
+                    }
+                  </span>
+                  </div>
+              )
+            })
+          }
+        </div>
+        </div>
+
+        <div className="bg-white px-5 py-3 h-auto block ">
+        <span className="flex justify-center py-2 text-2xl font-bold text-center tracking-wide underline underline-offset-8 decoration-blue-800">
+         CUSTOMER DATA
+        </span>
+        <div className="grid grid-cols-4 gap-7 px-5 py-4">
+          {
+            customers.map((customer) => {
+              return (
+                <div className="block rounded-lg ring-1 ring-red-500 px-2 py-3" key={customer.id}>
+                  <span className="text-xl font-bold py-2 w-full flex justify-between">
+                    {
+                      customer.first_name
+                    }
+                    {
+                      customer.last_name
+                    }
+                  </span>
+                  <span className="text-lg font-medium
+                   py-2 ">
+                    {
+                      customer.email
+                    }
+                  </span>
+                  </div>
+              )
+            })
+          }
+        </div>
+        </div>
+
+      <div className="bg-white px-5 py-3 h-auto block ">
+        <span className="flex justify-center py-2 text-2xl font-bold text-center tracking-wide underline underline-offset-8 decoration-blue-800">
+          CAR VIEW
         </span>
         <div className="px-3 py-4 grid grid-cols-4 gap-5">
           {CarList.map((carl) => {
@@ -37,6 +158,21 @@ const Home = () => {
           })}
         </div>
       </div>
+
+      <div className="bg-white px-5 py-3 h-auto block ">
+        <span className="flex justify-center py-2 text-2xl font-bold text-center tracking-wide underline underline-offset-8 decoration-blue-800">
+        TYPES OF VEHICLES
+        </span>
+        <div className="px-3 py-4 w-full grid grid-cols-4 gap-5">
+          {
+            CarType.map((carT)=>{
+              return (
+                <CarCategory key={carT.id} carT={carT}  />
+              )
+            })
+          }
+        </div>
+        </div>
 
       <div className="bg-white px-5 py-3 h-auto block ">
         <span className="flex justify-center py-2 text-2xl font-bold text-center tracking-wide underline underline-offset-8 decoration-blue-800">

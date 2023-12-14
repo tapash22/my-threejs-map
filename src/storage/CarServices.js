@@ -8,31 +8,31 @@ const CarServices = [
     {
         id:1,
         name:'Wheel',
-        icon: <GiCarWheel style={{ fontSize: '80px' }}  className="scale-100 text-white font-medium hover:scale-125 transition-all duration-100 hover:duration-100"  />,
+        icon: <GiCarWheel style={{ fontSize: '80px' }}  className="translate-y-0 scale-100 text-white font-medium hover:scale-150 transition-all duration-100 hover:duration-100"  />,
         info:'Balencing'
     },
     {
         id:2,
         name:'Sound',
-        icon: <GiSoundOn style={{ fontSize: '80px' }} className="text-3xl scale-100 text-white font-medium hover:scale-125 transition-all duration-300 hover:duration-300"  />,
+        icon: <GiSoundOn style={{ fontSize: '80px' }} className="translate-y-0 scale-100 text-white font-medium hover:scale-150 transition-all duration-100 hover:duration-100"  />,
         info:'Audio Installation'
     },
     {
         id:3,
         name:'Auto Painting',
-        icon: <FaPaintRoller style={{ fontSize: '80px' }} className="text-3xl scale-100 text-white font-medium hover:scale-125 transition-all duration-300 hover:duration-300"  />,
+        icon: <FaPaintRoller style={{ fontSize: '80px' }} className="translate-y-0 scale-100 text-white font-medium  hover:scale-150 transition-all duration-100 hover:duration-100"  />,
         info:'Repairing'
     },
     {
         id:4,
         name:'Audio System',
-        icon: <FaAssistiveListeningSystems style={{ fontSize: '80px', }} className="text-3xl scale-100 text-white font-medium hover:scale-125 transition-all hover:duration-300"  />,
+        icon: <FaAssistiveListeningSystems style={{ fontSize: '80px', }} className="translate-y-0 scale-100 text-white font-medium hover:scale-150 transition-all duration-100 hover:duration-100"  />,
         info:'Installation'
     },
     {
         id:5,
         name:'Car Repair',
-        icon: <IoSettingsOutline style={{ fontSize: '80px',  }} className="text-3xl scale-100 text-white font-medium hover:scale-125 transition-all duration-300 hover:duration-300"  />,
+        icon: <IoSettingsOutline style={{ fontSize: '80px',  }} className="translate-y-0 scale-100 text-white font-medium  hover:scale-150 transition-all duration-100 hover:duration-100"  />,
         info:'Repairing'
     },
 ]

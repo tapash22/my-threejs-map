@@ -22,7 +22,7 @@ const Header = () => {
     ];
 
   return (
-    <div className="bg-indigo-950 px-16 py-2 flex ring-1 ring-gray-200 w-full h-auto shadow-lg shadow-indigo-500">
+    <div className="bg-indigo-950 px-16 py-2 flex ring-1 ring-gray-200 w-full h-auto shadow-lg shadow-indigo-500 fixed z-50">
         <div className="w-1/4 flex justify-start items-center">
         <Link to="/">
         <img src={logo} alt="" className="py-2 scale-125"  />
