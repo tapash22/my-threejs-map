@@ -6,17 +6,20 @@ import Footer from '../components//main/Footer';
 import Home from '../pages/Home'; 
 import About from '../pages/About';
 import Contact from '../pages/Contact';
-
+import Cars from '../pages/Cars';
 
 const Routess = () =>{
     return(
         <Router>
             <Header  />
-            <Routes>
+            <div className='py-16 w-full h-auto '>
+            <Routes >
                 <Route path='/' element={<Home />} />
+                <Route path='/cars' element={<Cars />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
             </Routes>
+            </div>
             <Footer  />
         </Router>
     )

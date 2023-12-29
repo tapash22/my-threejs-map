@@ -37,6 +37,11 @@ textarea::placeholder{
   animation: rotate360 10s linear;
 }
 
+.hover-scale-125:hover img {
+  transform: scale(1.25);
+  transition: transform 0.3s ease;
+}
+
 @keyframes rotate360 {
   0%{
     transform: rotate(0deg);

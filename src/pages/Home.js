@@ -1,7 +1,7 @@
 import { CarShow } from "../components/animation/CarShow";
 // import { Text } from '@react-three/drei';
 import { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+// import { Canvas } from "@react-three/fiber";
 import CarList from "../storage/CarList";
 import Customers from "../storage/Customers";
 import CustomarProfile from '../components/card/CustomarProfile';
@@ -24,7 +24,7 @@ const Home = () => {
     const fetchData = async () => {
       
       try {
-        const url = process.env.REACT_APP_API_URL;
+        const url ='https://jsonplaceholder.typicode.com/users';
         const response = await fetch(url);
         console.log(response);
 
@@ -48,7 +48,7 @@ const Home = () => {
     const fetchData = async () => {
       
       try {
-        const url ='http://localhost:8000/api/customers';
+        const url ='https://jsonplaceholder.typicode.com/users';
         const response = await fetch(url);
         console.log(response);
 
@@ -76,20 +76,22 @@ const Home = () => {
   }
 
   return (
-    <div className="block bg-white py-3">
+    <div className="block bg-white overflow-hidden">
       {/* header */}
-      <div style={{ height: "550px" }}>
+      {/* <div style={{ height: "550px" }}>
         <Suspense fallback={null}>
-          <Canvas shadows resize={{ scroll: false }} style={{}}>
+          <Canvas shadows resize={{ scroll: false }} style={{}}> */}
             {/* <Text position={[6,2,2]} rotation={[0,0,0]} scale={0.5} color={0xfff000} anchorX='left'>
         this is me {'\n'} do you know
       </Text> */}
-            <CarShow />
+            {/* <CarShow />
           </Canvas>
         </Suspense>
-      </div>
+      </div> */}
 
-      <div className="bg-white px-5 py-3 h-auto block ">
+      {/* canvas animation use end  */}
+
+      {/* <div className="bg-white px-5 py-3 h-auto block ">
         <span className="flex justify-center py-2 text-2xl font-bold text-center tracking-wide underline underline-offset-8 decoration-blue-800">
          USERS DATA
         </span>
@@ -97,16 +99,17 @@ const Home = () => {
           {
             users.map((user) => {
               return (
-                <div className="block rounded-lg ring-1 ring-red-500 px-2 py-3" key={user.id}>
-                  <span className="text-xl font-bold py-2 ">
+                <div className="block rounded-xl ring-1 ring-bg-indigo-500 px-3 py-3 w-full bg-indigo-950" key={user.id}>
+                  <span className="text-lg font-bold flex justify-center w-full  py-1 tracking-wide text-gray-200 ">
                     {
                       user.name
                     }
                   </span>
-                  <span className="text-lg font-medium
-                   py-2 ">
+                  
+                  <span className="text-sm font-medium break-words tracking-wider flex justify-center w-full text-gray-400
+                   py-1 ">
                     {
-                      user.name
+                      user.email
                     }
                   </span>
                   </div>
@@ -144,7 +147,7 @@ const Home = () => {
             })
           }
         </div>
-        </div>
+        </div> */}
 
       <div className="bg-white px-5 py-3 h-auto block ">
         <span className="flex justify-center py-2 text-2xl font-bold text-center tracking-wide underline underline-offset-8 decoration-blue-800">

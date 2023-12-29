@@ -4,8 +4,8 @@ import { IoMdPricetags } from "react-icons/io";
 
 const SingleCar = ({ carl }) => {
   return (
-    <div className="w-full h-auto  py-2 block shadow-lg shadow-indigo-500">
-      <div className="flex justify-start  w-full px-0 items-center py-5 rounded-tl-full rounded-br-full bg-gray-200  shadow-lg shadow-indigo-500">
+    <div className="w-full h-auto  py-2 block shadow-lg shadow-indigo-900 rounded-3xl">
+      <div className="flex justify-start  w-full px-0 items-center py-5 rounded-tl-full rounded-br-full bg-gray-200  shadow-xl shadow-indigo-950">
         <img
           src={carl.image}
           alt=""
@@ -13,8 +13,7 @@ const SingleCar = ({ carl }) => {
         />
       </div>
       <div
-        className="w-full h-auto px-5 py-5 block my-1"
-        style={{ borderTop: "1px solid gold" }}
+        className="w-full h-auto px-5 py-5 block my-1 shadow-lg shadow-indigo-900 rounded-3xl"
       >
         <span className="text-lg font-bold py-1 text-indigo-950">
           {carl.name}
@@ -34,7 +33,7 @@ const SingleCar = ({ carl }) => {
             return (
               <li
                 key={i}
-                className="flex justify-center text-sm text-white font-medium tracking-wide bg-indigo-900 px-2 py-1 rounded-xl "
+                className="flex justify-center text-sm text-white font-medium tracking-wide bg-indigo-900 opacity-80 px-2 py-1 rounded-xl "
               >
                 {f}
               </li>
@@ -43,7 +42,7 @@ const SingleCar = ({ carl }) => {
         </ul>
         <p className=" flex justify-start w-full">
           <IoMdPricetags className="font-bold text-3xl px-2 py-1 text-indigo-950" />
-          <span className="text-xl font-medium ">{carl.price}</span>
+          <span className="text-xl font-bold ">{carl.price}</span>
         </p>
       </div>
     </div>
