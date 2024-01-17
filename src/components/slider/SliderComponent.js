@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const SliderComponent = ({ data }) => {
@@ -25,9 +26,9 @@ const SliderComponent = ({ data }) => {
                   {slide.text}
                 </h2>
             <div className='py-2 flex justify-start'>
-            <button style={{background: slide.color}} className='px-8 py-3 text-lg font-bold tracking-wide rounded-md shadow-lg shadow-indigo-900 text-white'>
+            <Link to={`/slider_car/${slide.id}}`} style={{background: slide.color}} className='px-8 py-3 text-lg font-bold tracking-wide rounded-md shadow-lg shadow-indigo-900 text-white'>
                     {slide.button}
-                </button>
+                </Link>
             </div>
               </div>
             </div>

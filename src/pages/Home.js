@@ -1,12 +1,13 @@
-import { CarShow } from "../components/animation/CarShow";
+// import { CarShow } from "../components/animation/CarShow";
 // import { Text } from '@react-three/drei';
-import { Suspense, useEffect, useState } from "react";
+//Suspense
+import { useEffect, useState } from "react";
 // import { Canvas } from "@react-three/fiber";
 import CarList from "../storage/CarList";
 import Customers from "../storage/Customers";
 import CustomarProfile from '../components/card/CustomarProfile';
 import SingleCar from "../components/card/SingleCar";
-import EmpProfile from "../storage/EmpProfile";
+// import EmpProfile from "../storage/EmpProfile";
 import OurServices from "../components/swiper/OurServices";
 import CarServices from "../storage/CarServices";
 import CarType from '../storage/CarType';
@@ -19,7 +20,8 @@ const jsonData = [
     imageUrl: "https://i.ibb.co/02XkZNb/toine-g-i-Rn-Ue-A04k-UY-unsplash.jpg",
     text: "Unleash Your Drive, Unwrap Your Future.",
     button:"Drive Home Happiness",
-    color: "#FF5733" 
+    color: "#FF5733",
+    link:""
   },
   {
     id: 2,
