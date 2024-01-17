@@ -11,7 +11,31 @@ import OurServices from "../components/swiper/OurServices";
 import CarServices from "../storage/CarServices";
 import CarType from '../storage/CarType';
 import CarCategory from "../components/card/CarCategory";
+import SliderComponent from "../components/slider/SliderComponent";
 
+const jsonData = [
+  {
+    id: 1,
+    imageUrl: "https://i.ibb.co/02XkZNb/toine-g-i-Rn-Ue-A04k-UY-unsplash.jpg",
+    text: "Unleash Your Drive, Unwrap Your Future.",
+    button:"Drive Home Happiness",
+    color: "#FF5733" 
+  },
+  {
+    id: 2,
+    imageUrl: "https://i.ibb.co/MZnzTXz/alan-king-1-R63ta-Co-Sn-M-unsplash.jpg",
+    text: "Elevate Your Drive, Elevate Your Life.",
+    button:"Test Drive Your Future",
+    color: "#37FF67" 
+  },
+  {
+    id: 3,
+    imageUrl: "https://i.ibb.co/mXW9Kqb/arteum-ro-TVFx7i-FAAd-Q-unsplash.jpg",
+    text: "Where Every Mile Feels Like a Victory.",
+    button:"Shift Into Savings",
+    color: "#A533FF" 
+  },
+];
 
 const Home = () => {
 
@@ -148,6 +172,9 @@ const Home = () => {
           }
         </div>
         </div> */}
+        <div>
+          <SliderComponent data={jsonData} />
+        </div>
 
       <div className="bg-white px-5 py-3 h-auto block ">
         <span className="flex justify-center py-2 text-2xl font-bold text-center tracking-wide underline underline-offset-8 decoration-blue-800">
